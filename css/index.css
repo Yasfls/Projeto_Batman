@@ -30,7 +30,7 @@ nav ul {
   color: green;
 }
 
-.logo {
+#logo {
   width: 100px;
   height: auto;
 }
@@ -45,7 +45,7 @@ a:visited {
   color: #ffffff;
   font-weight: bold;
 }
-.prod_titulo
+#prod_titulo
 {
     text-align: center;
     padding: 20px;
