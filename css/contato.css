@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+#logo {
+  width: 100px;
+  height: auto;
+}
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+a:visited {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+#contato_titulo
+{
+    text-align: center;
+    padding: 20px;
+}
+#fale
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+footer {
+  color: #000000;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+#enviar
+{
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
