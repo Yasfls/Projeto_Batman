@@ -3,59 +3,89 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #f4f4f4;
 }
+
 header {
-  background-color: #333;
+  background-color: #1a1a1a;
   color: #fff;
-  padding: 20px;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
 #logo {
-  width: 100px;
-  height: auto;
+  width: 80px;
 }
-a:link {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-}
-a:visited {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-}
+
 nav ul {
   list-style: none;
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
-#contato_titulo
-{
-    text-align: center;
-    padding: 20px;
+
+a {
+  text-decoration: none;
+  color: #f1c40f;
+  font-weight: bold;
 }
-#fale
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 300px;
-    margin: 0 auto;
-}
-footer {
-  color: #000000;
+
+#contato_titulo {
   text-align: center;
-  padding: 10px;
-  margin-top: 20px;
+  padding: 30px;
+  color: #333;
 }
-#enviar
-{
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
+
+#fale {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#fale input,
+#fale textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#fale textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#enviar {
+  padding: 15px;
+  background-color: #1a1a1a;
+  color: #f1c40f;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+#enviar:hover {
+  background-color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  margin-top: 40px;
 }
