@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <title>Batman Móveis</title>
+  <title>Batman Móveis - Início</title>
   <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
   <header>
-    <img src="assets/logo.png" id="logo">
+    <img src="assets/logo.png" id="logo" alt="Logo Batman">
     <nav>
       <ul>
         <li><a href="index.html">Início</a></li>
@@ -19,32 +17,38 @@
   </header>
   <main>
     <section id="produtos">
-      <h1 id="prod_titulo">Produtos</h1>
+      <h1 id="prod_titulo">Produtos Disponíveis</h1>
       <div class="card" data-id="1">
-        <h2 class="title">Mesa</h2>
+        <h2 class="title">Mesa Bat-Caverna</h2>
         <p class="price">R$ 1200</p>
-        <button onclick="editar(1)">Editar</button>
-        <button onclick="excluir(1)">Excluir</button>
+        <div class="actions">
+            <button onclick="editar(1)">Editar</button>
+            <button onclick="excluir(1)">Excluir</button>
+        </div>
       </div>
       <div class="card" data-id="2">
-        <h2 class="title">Cadeira</h2>
+        <h2 class="title">Cadeira Wayne</h2>
         <p class="price">R$ 300</p>
-        <button onclick="editar(2)">Editar</button>
-        <button onclick="excluir(2)">Excluir</button>
+        <div class="actions">
+            <button onclick="editar(2)">Editar</button>
+            <button onclick="excluir(2)">Excluir</button>
+        </div>
       </div>
     </section>
+
     <aside>
+      <h3>Adicionar Novo Produto</h3>
       <form id="novo" method="post">
-        <label>Nome: <input type="text" name="nome" id="nome"></label>
-        <label>Preço: <input type="text" name="preco" id="preco"></label>
-        <button type="submit" class="salvar">Salvar</button>
+        <label>Nome: <input type="text" name="nome" id="nome" required></label>
+        <label>Preço: <input type="number" name="preco" id="preco" required></label>
+        <button type="submit" class="salvar">Salvar Produto</button>
       </form>
     </aside>
-    <footer>
-     <p>© Batman Móveis</p>
-    </footer>
-    <script src="js/app.js"></script>
-    <script src="js/utils.js"></script>
+  </main>
+  <footer>
+     <p>© 2025 Batman Móveis - Todos os direitos reservados.</p>
+  </footer>
+  <script src="js/app.js"></script>
+  <script src="js/utils.js"></script>
 </body>
-
 </html>
