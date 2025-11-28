@@ -3,82 +3,151 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   background: #f4f4f4;
-}
-.card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin: 10px;
+  color: #333;
 }
 
 header {
-  background-color: #333;
+  background-color: #1a1a1a;
   color: #fff;
-  padding: 20px;
-}
-nav ul {
-  list-style: none;
+  padding: 15px 20px;
   display: flex;
-  gap: 10px;
-}
-.card .title {
-  font-size: 18px;
-}
-.price {
-  color: green;
+  align-items: center;
+  justify-content: space-between;
 }
 
 #logo {
-  width: 100px;
+  width: 80px;
   height: auto;
 }
 
-a:link {
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+a {
   text-decoration: none;
-  color: #ffffff;
+  color: #f1c40f;
   font-weight: bold;
+  font-size: 1.1em;
 }
-a:visited {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
+
+a:hover {
+  color: #fff;
 }
-#prod_titulo
-{
-    text-align: center;
-    padding: 20px;
+
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-footer {
-  color: #000000;
+
+#produtos {
+  flex: 3;
+}
+
+#prod_titulo {
   text-align: center;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+}
+
+.card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .title {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.price {
+  color: #27ae60;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.card button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+
+.card button:first-of-type {
+  background-color: #2980b9;
+}
+
+/* Editar */
+.card button:last-of-type {
+  background-color: #c0392b;
+}
+
+/* Excluir */
+
+aside {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#novo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#novo label {
+  font-weight: bold;
+}
+
+#novo input {
   padding: 10px;
-  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-#novo
-{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 40px;
+
+.salvar {
+  padding: 12px;
+  background-color: #1a1a1a;
+  color: #f1c40f;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: 0.3s;
 }
-.salvar
-{
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
+
+.salvar:hover {
+  background-color: #333;
 }
-#nome, #preco
-{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    
+
+footer {
+  background: #1a1a1a;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  clear: both;
 }

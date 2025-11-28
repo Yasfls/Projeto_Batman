@@ -59,7 +59,7 @@ if (formFale) {
         }
  
         console.log("Mensagem enviada:", { nome, email, mensagem });
-        alert(`Obrigado, ${nome}! Sua mensagem foi enviada (Simulação).`);
+        alert('Sucesso! Obrigado pelo contato, ${nome}. Retornaremos em breve.');
         e.target.reset();
     });
 }
