@@ -1,33 +1,45 @@
-let proximoId = 3; 
+let proximoId = 3;
+ 
+// Utilitário para formatar moeda
+const formatarMoeda = (valor) => `R$ ${valor}`;
+ 
+// Gerenciamento do Formulário de Novos Produtos
 const formNovo = document.getElementById('novo');
 if (formNovo) {
     formNovo.addEventListener('submit', function(e) {
         e.preventDefault(); 
         const nomeInput = e.target.nome;
         const precoInput = e.target.preco;
-        if (!nomeInput.value || !precoInput.value) {
+        // Validação
+        if (!nomeInput.value.trim() || !precoInput.value.trim()) {
             alert("Por favor, preencha nome e preço.");
             return;
         }
         if (isNaN(parseFloat(precoInput.value))) {
-             alert("O preço deve ser um número.");
+             alert("O preço deve ser um número válido.");
             return;
         }
+ 
+        // Template String para criar o novo card
         const novoProdutoHtml = `
-        <div class="card" data-id="${proximoId}">
-            <h2 class="title">${nomeInput.value}</h2>
-            <p class="price">R$ ${precoInput.value}</p>
-            <button onclick="editar(${proximoId})">Editar</button>
-            <button onclick="excluir(${proximoId})">Excluir</button>
-        </div>
+<div class="card" data-id="${proximoId}">
+<h2 class="title">${nomeInput.value}</h2>
+<p class="price">${formatarMoeda(precoInput.value)}</p>
+<div class="actions">
+<button onclick="editar(${proximoId})">Editar</button>
+<button onclick="excluir(${proximoId})">Excluir</button>
+</div>
+</div>
         `;
         document.getElementById('produtos').insertAdjacentHTML('beforeend', novoProdutoHtml);
-        nomeInput.value = '';
-        precoInput.value = '';
+        // Reset do form
+        e.target.reset();
         proximoId++;
-        console.log("Novo produto adicionado (simulado)");
+        console.log("Novo produto adicionado com sucesso.");
     });
 }
+ 
+// Gerenciamento do Formulário de Contato
 const formFale = document.getElementById('fale');
 if (formFale) {
     formFale.addEventListener('submit', function(e) {
@@ -35,16 +47,19 @@ if (formFale) {
         const nome = document.getElementById('nome').value;
         const email = document.getElementById('email').value;
         const mensagem = document.getElementById('mensagem').value;
+ 
+        // Validações básicas
         if (!nome || !email || !mensagem) {
             alert('Por favor, preencha todos os campos.');
             return;
         }
-        if (email.indexOf('@') === -1) {
-            alert('Email inválido. Deve conter um "@".');
+        if (!email.includes('@')) {
+            alert('Por favor, insira um e-mail válido.');
             return;
         }
-        console.log("Enviando dados (simulado):", {nome, email, mensagem});
-        alert('Mensagem enviada com sucesso! (Simulação)');
+ 
+        console.log("Mensagem enviada:", { nome, email, mensagem });
+        alert(`Obrigado, ${nome}! Sua mensagem foi enviada (Simulação).`);
         e.target.reset();
     });
 }

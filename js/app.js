@@ -1,44 +1,38 @@
+// Funcionalidades de Edição e Exclusão (Core)
+ 
 function editar(id) {
     const card = document.querySelector(`.card[data-id='${id}']`);
     if (!card) {
         console.error("Card não encontrado");
         return;
     }
- 
     const tituloAtual = card.querySelector('.title').innerText;
-    const precoAtual = card.querySelector('.price').innerText.replace('R$ ', '');
+    // Remove "R$ " para pegar apenas o número
+    const precoAtual = card.querySelector('.price').innerText.replace('R$ ', '').trim();
     const novoNome = prompt("Digite o novo nome:", tituloAtual);
-    const novoPreco = prompt("Digite o novo preço:", precoAtual);
+    if (novoNome === null) return; // Cancelou
  
-    if (novoNome !== null && novoPreco !== null) {
-        if (isNaN(parseFloat(novoPreco))) {
-            alert("Preço inválido.");
-            return;
-        }
-        card.querySelector('.title').innerText = novoNome;
-        card.querySelector('.price').innerText = `R$ ${novoPreco}`;
-        alert('Produto atualizado!');
+    const novoPreco = prompt("Digite o novo preço:", precoAtual);
+    if (novoPreco === null) return; // Cancelou
+    if (isNaN(parseFloat(novoPreco))) {
+        alert("Preço inválido. Digite apenas números.");
+        return;
     }
+    // Atualiza o DOM
+    card.querySelector('.title').innerText = novoNome;
+    card.querySelector('.price').innerText = `R$ ${novoPreco}`;
+    console.log(`Produto ${id} atualizado: ${novoNome} - R$ ${novoPreco}`);
 }
-
+ 
 function excluir(id) {
-    // 1. Confirmação
     if (!confirm("Tem certeza que deseja excluir este produto?")) {
         return;
     }
- 
-    // 2. Encontra o card pelo data-id
     const cardParaExcluir = document.querySelector(`.card[data-id='${id}']`);
-   
     if (cardParaExcluir) {
-        // 3. Remove o elemento da página
         cardParaExcluir.remove();
-        console.log(`Item ${id} removido da tela.`);
+        console.log(`Item ${id} removido com sucesso.`);
     } else {
         console.warn(`Item ${id} não encontrado.`);
     }
 }
- 
-// A função 'enviarContato' foi removida daqui.
-// Sua lógica de validação foi integrada diretamente em 'utils.js',
-// que já cuida do evento de 'submit' do formulário de contato.
